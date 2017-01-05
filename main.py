@@ -106,8 +106,14 @@ def calculateDiff(dict):
 
 
 def main():
-    print(sys.argv)
+    files = sys.argv[1:]
+    for i in files:
+        recognize_gender(i)
 
+    if(len(files) > 0):
+        return
+
+    # tests
     files = ["resources/002_M.wav", "resources/003_K.wav", "resources/004_M.wav", "resources/005_M.wav",
              "resources/006_K.wav", "resources/007_M.wav", "resources/008_K.wav", "resources/009_K.wav",
              "resources/010_M.wav", "resources/011_M.wav"]
@@ -116,8 +122,8 @@ def main():
               "resources/016_K.wav", "resources/017_M.wav", "resources/018_K.wav", "resources/019_M.wav",
               "resources/020_M.wav", "resources/021_M.wav"]
 
-    for i in files:
-        recognize_gender(i, freqFilter=1)
+    for i in files2:
+        recognize_gender(i)
 
 
 if __name__ == "__main__":
